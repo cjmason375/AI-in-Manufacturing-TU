@@ -7,6 +7,8 @@ GitHub for sharing of files and updates for the ongoing AI in Manufacturing rese
 
 >"Machine Learning (ML) is a branch of artificial intelligence (AI) and computer science that focuses on using data and algorithms to enable AI to imitate the way that humans learn, gradually improving its accuracy." ~ [IBM](https://www.ibm.com/topics/machine-learning)
 
+supervised v. unsupervised learning definitions
+
 (put more info)
 
 
@@ -20,9 +22,14 @@ GitHub for sharing of files and updates for the ongoing AI in Manufacturing rese
  
 The BrickML device was developed in conjuction between Edge Impulse and Reloc to make be quickly implemented and make ML more accessible. It is a plug-and-play ML tool ...
 
+
 ## *Gathering and Sorting Data*
 
-For this guide, the steps to creating a ML model will be stepped through an example of creating a supervised learning model capable of classifying 3 labeled shapes (add more later)...
+### ***Example Project***
+
+For this guide, steps will be provided to create an example ML model capable of classifying 3 labeled shapes using a device's accelerometer data. With the device, you will be able to draw out the shape, and the model will be able to predict what shape it suspects is being drawn.
+
+(add more later)...
 
 ### Step 1: *Create the model*
 
@@ -42,19 +49,23 @@ Back in the Studio, select the waffle menu at the top left and navigate to the `
 **Connect your device to your computer**. For the sake of continuinity with the example project, all further references to the "data collection device" will reference specific instructions for the **BrickML module**. However, if using an alternate data collection device, instructions should be similar but may require extra steps.
 
 For the BrickML module, plug a Type-C cable into the BrickML and connect the cable to your computer. Select the USB trident symbol (rightmost symbol on `Collect data` section) and connect to your device from here. Once connected, options for *Device, Label, Sensor, Sample length (ms.), and Frequency* should appear under the `Collect data` section. Definitions of each are provided below:
+
 + **DEVICE**: allows you to select the proper data collection device (should already display name of device you just connected)
 + **LABEL**: allows you to assign identifiers to groups of collected data so the computer can group together similar data
 + **SENSOR**: determines what family of sensors will be used to collect data during the sample
-+ **SAMPLE LENGTH (ms.)**: determines the length of the sample, in milliseconds
++ **SAMPLE LENGTH (ms)**: determines the length of the sample, in milliseconds
 + **FREQUENCY:** determines how often you want the sensors to collect data within the sample, in Hertz
 
 Select the proper parameters for your project based on the model intention and intended results.
 
-> + **DEVICE**: BrickML device (displayed as serial code)
-> + **LABEL**: one of three labels for intended shapes to detect (Straight_Line, Oval, Trapezoid)
+![Collect new data screen](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/862cff44-882f-40ac-9c32-ef30d7a6dbd8)
+
+> + **DEVICE**: BrickML device
+> + **LABEL**: one of three labels for intended shapes to detect (Circle, Triangle, Square)
 > + **SENSOR**: Intertial (accelerometer data is needed)
-> + **SAMPLE LENGTH (ms.)**: ...
+> + **SAMPLE LENGTH (ms)**: 5000 ms (5 seconds)
 > + **FREQUENCY:** 100 Hz (left this setting as the standard)
+
 
 
 
