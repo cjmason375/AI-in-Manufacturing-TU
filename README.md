@@ -39,7 +39,7 @@ Ensure you have a [compatible device](https://docs.edgeimpulse.com/docs/edge-ai-
 
 Back in the Studio, select the waffle menu at the top left and navigate to the `Data acquisition` tab. 
 
-**Connect your device to your computer**. For the sake of continuinity with the example project, all further references to the data collection device will reference specific instructions for the BrickML module. However, if using an alternate data collectioon device, instructions should be similar but may require extra steps.
+**Connect your device to your computer**. For the sake of continuinity with the example project, all further references to the "data collection device" will reference specific instructions for the **BrickML module**. However, if using an alternate data collection device, instructions should be similar but may require extra steps.
 
 For the BrickML module, plug a Type-C cable into the BrickML and connect the cable to your computer. Select the USB trident symbol (rightmost symbol on `Collect data` section) and connect to your device from here. Once connected, options for *Device, Label, Sensor, Sample length (ms.), and Frequency* should appear under the `Collect data` section. Definitions of each are provided below:
 + **DEVICE**: allows you to select the proper data collection device (should already display name of device you just connected)
