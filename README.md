@@ -90,7 +90,8 @@ A general good rule of thumb is to balance your TRAINING and TESTING data into a
 
 Upon clicking on a sample from the `Dataset` panel, you can view a *raw data graph* of the collected data. The graph is color-coded for each sensor that collected data, and a legend exists below the graph. Use these graphs to inspect and determine if the collected data appears as you would expect. 
 
-(insert image of graphed data)
+![Graphed Data Example](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/54dc2861-08d7-469e-a534-4646078b4ddb)
+
 
 
 ### Step 4: *Sorting data*
@@ -103,11 +104,35 @@ Edge Impulse makes this process as easy as clicking on the 3-dot menu beside a s
 
 As you move samples from the TRAINING section to the TEST section, the two graphs above the `Dataset` panel become increasingly important. The "DATA COLLECTED" graph displays the total seconds of data collected, but it also shows you how the total data is split up between label groups. The "TRAIN/TEST SPLIT" shows users a graphical and numerical view of the split between the TRAIN and TEST data. Hovering over either graph provides more specific details.
 
+![Data Collected Graph and Test-Train Graph examples](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/fbf6d17f-d0e6-400c-ace6-4d4cdcd26585)
 
 
 
 ### Step 5: *Designing an Impulse*
 + **IMPULSE**: ...
++ **PROCESSING BLOCKS**: ...
++ **LEARNING BLOCKS**: ...
+
+With all data collected for training, it is now time to create an ***Impulse*** for your project. The Impulse serves as the central location for the important Machine Learning  - raw data is interpreted and sliced into smaller windows, signal PROCESSING blocks extract features of training data and makes raw data easier to process, and LEARNING blocks learn from the training data to classify new data.
+
+Select the waffle menu at the top left and navigate to the `Impulse design` tab, then select the `Create impulse`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## *Setting Up a Machine Learning Model (with Edge Impulse)*
 
