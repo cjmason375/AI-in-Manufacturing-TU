@@ -113,12 +113,27 @@ As you move samples from the TRAINING section to the TEST section, the two graph
 + **PROCESSING BLOCKS**: ...
 + **LEARNING BLOCKS**: ...
 
-With all data collected for training, it is now time to create an ***Impulse*** for your project. The Impulse serves as the central location for the important Machine Learning  - raw data is interpreted and sliced into smaller windows, signal PROCESSING blocks extract features of training data and makes raw data easier to process, and LEARNING blocks learn from the training data to classify new data.
+With all data collected for training, it is now time to create an ***Impulse*** for your project. The Impulse serves as the central location for the important Machine Learning processes - raw data is interpreted and sliced into smaller windows, signal PROCESSING blocks extract features of training data and makes raw data easier to process, and LEARNING blocks learn from the training data to classify new data.
 
 Select the waffle menu at the top left and navigate to the `Impulse design` tab, then select the `Create impulse`.
 
+Here, you will see menus for editing time parameters of the raw data, adding a PROCESSING block and a LEARNING block, and the features that will be output. 
+
+For this project, we will use a ***Spectral analysis*** signal processing block and a ***Classifier*** learning block. The *Spectral Analysis* block "applies a filter, performs spectral analysis on the signal, and extracts frequency and spectral power data". The *Classifer* block will evalaute these spectral features and learn to distinguish between the three classes (square, circle, triangle). EdgeImpulse also suggests appropriate PROCESSING and LEARNING blocks based on the data you collected, signified by the yellow star under the RECOMMENDED column when selecting a block. For more information on the other options for [PROCESSING](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks) and [LEARNING](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks) blocks and to gain more insight, visit the attached links.  
+
+> In the `Time series data` panel, adjust `Window size` to 5,000 ms., `Window increase` to 100 ms, and do not change the default values for `Frequency` and `Zero-pad data`.
+> Select `Add a processing block` and select ***Spectral Analysis***. De-select all input axes beginning with "gyr..." as this is gyroscope data and is not needed for this project. Only *accX*, *accY*, and *accZ* should be left selected.
+> Select `Add a learning block` and select ***Classifier***. Ensure "Spectral features" is selected as Input features.
+> Under `Output features`, ensure all labels are showing. Then, select `Save Impulse`.
+
+![Impulse Design Panel](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/05688eb7-2afa-4475-a4c4-0197130a7624)
 
 
+
+
+### Step 6: *Training Model using Impulse*
+  
+...
 
 
 
