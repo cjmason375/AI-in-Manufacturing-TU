@@ -162,6 +162,8 @@ Example of good data:
 
 
 
+
+
 ### Step 7: *Training Model Using Impulse: Training with Classifer*
 + **NEURAL NETWORK**: a collection of pattern-recognizing algorithms that follow a similar process as the human brain
 
@@ -169,7 +171,12 @@ Now that all data has been processed, it is time to start training the neural ne
 
 Select the waffle menu at the top left and, below the `Impulse design` tab, select `Classifier`.
 
-Here, you will be faced with options to change settings for "Number of training cycles", "Use learned optimizer", "Learning rate", and "Training processor". Seeing as every option besides the training cycle setting requires Enterprise subscriptions, those settings will be left as default. Changing the number of training cycles 
+Here, you will be faced with options to change settings for "Number of training cycles", "Use learned optimizer", "Learning rate", and "Training processor". Seeing as every option besides the training cycle setting requires Enterprise subscriptions, those settings will be left as default. When changing the number of training cycles, one must consider overfitting and underfitting.
+
++ **OVERFITTING**: ...
++ **UNDERFITTING**: ...
+
+...
 
 
 
