@@ -66,7 +66,7 @@ Select the proper parameters for your project based on the model intention and i
 ![Collect new data screen](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/862cff44-882f-40ac-9c32-ef30d7a6dbd8)
 
 > + **DEVICE**: BrickML device
-> + **LABEL**: one of three labels for intended shapes to detect (Circle, Triangle, Square)
+> + **LABEL**: one of three labels for intended shapes to detect (Straight_Line, Trapezoid, Oval)
 > + **SENSOR**: Intertial (accelerometer data is needed)
 > + **SAMPLE LENGTH (ms)**: 5000 ms (5 seconds)
 > + **FREQUENCY:** 100 Hz (left this setting as the standard)
@@ -80,7 +80,7 @@ Select the proper parameters for your project based on the model intention and i
 
 A general good rule of thumb is to balance your TRAINING and TESTING data into an 80/20 split - 80% of total collected data should go into the TRAIN section, and the remaining 20% should go into the TEST section.
 
-> For this project, 30 total samples of each label will be collected (90 samples between the 3 labels). Of those 30 trials, 25 trials will be reserved as TRAIN data while 5 samples will be moved to the TEST data. This will result in a 83%/17% split.)
+> For this project, 25 total samples of each label will be collected (75 samples between the 3 labels). Of those 30 trials, 20 trials will be reserved as TRAIN data while 5 samples will be moved to the TEST data. This will result in a 80%/20% split.)
 
 **Sample desired data.** Edit the sample label (if needed), set up your device, and click the `Start sampling` button to begin your sample. The button will then change to display `Sampling... (time left)`, and once the sample is finished, the sample's data will automatically be added to `Dataset` panel in the TRAINING area. Complete these samples on a specific label until you have reached the total number (both TRAIN and TEST sets) for that label, then move on to your next label.
 
@@ -90,7 +90,9 @@ A general good rule of thumb is to balance your TRAINING and TESTING data into a
 
 Upon clicking on a sample from the `Dataset` panel, you can view a *raw data graph* of the collected data. The graph is color-coded for each sensor that collected data, and a legend exists below the graph. Use these graphs to inspect and determine if the collected data appears as you would expect. 
 
-![Graphed Data Example](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/54dc2861-08d7-469e-a534-4646078b4ddb)
+
+![Graphed Data Ex](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/8d164b4c-7be0-4134-beff-2c7e1396f3da)
+
 
 
 
@@ -104,7 +106,7 @@ Edge Impulse makes this process as easy as clicking on the 3-dot menu beside a s
 
 As you move samples from the TRAINING section to the TEST section, the two graphs above the `Dataset` panel become increasingly important. The "DATA COLLECTED" graph displays the total seconds of data collected, but it also shows you how the total data is split up between label groups. The "TRAIN/TEST SPLIT" shows users a graphical and numerical view of the split between the TRAIN and TEST data. Hovering over either graph provides more specific details.
 
-![Data Collected Graph and Test-Train Graph examples](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/fbf6d17f-d0e6-400c-ace6-4d4cdcd26585)
+![Data Collected Graph and Test-Train Graph examples](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/153e7e24-7907-4f42-b41b-d3bbb07604f6)
 
 
 
@@ -119,21 +121,56 @@ Select the waffle menu at the top left and navigate to the `Impulse design` tab,
 
 Here, you will see menus for editing time parameters of the raw data, adding a PROCESSING block and a LEARNING block, and the features that will be output. 
 
-For this project, we will use a ***Spectral analysis*** signal processing block and a ***Classifier*** learning block. The *Spectral Analysis* block "applies a filter, performs spectral analysis on the signal, and extracts frequency and spectral power data". The *Classifer* block will evalaute these spectral features and learn to distinguish between the three classes (square, circle, triangle). EdgeImpulse also suggests appropriate PROCESSING and LEARNING blocks based on the data you collected, signified by the yellow star under the RECOMMENDED column when selecting a block. For more information on the other options for [PROCESSING](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks) and [LEARNING](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks) blocks and to gain more insight, visit the attached links.  
+For this project, we will use a ***Spectral analysis*** signal processing block and a ***Classifier*** learning block. The *Spectral Analysis* block "applies a filter, performs spectral analysis on the signal, and extracts frequency and spectral power data". The *Classifer* block will evalaute these spectral features and learn to distinguish between the three classes (Straight_Line, Trapezoid, Oval). EdgeImpulse also suggests appropriate PROCESSING and LEARNING blocks based on the data you collected, signified by the yellow star under the RECOMMENDED column when selecting a block. For more information on the other options for [PROCESSING](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks) and [LEARNING](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks) blocks and to gain more insight, visit the attached links.  
 
-> In the `Time series data` panel, adjust `Window size` to 5,000 ms., `Window increase` to 100 ms, and do not change the default values for `Frequency` and `Zero-pad data`.
+> In the `Time series data` panel, adjust `Window size` to 2,500 ms., `Window increase` to 100 ms, and do not change the default values for `Frequency` and `Zero-pad data`.
 > Select `Add a processing block` and select ***Spectral Analysis***. De-select all input axes beginning with "gyr..." as this is gyroscope data and is not needed for this project. Only *accX*, *accY*, and *accZ* should be left selected.
 > Select `Add a learning block` and select ***Classifier***. Ensure "Spectral features" is selected as Input features.
 > Under `Output features`, ensure all labels are showing. Then, select `Save Impulse`.
 
-![Impulse Design Panel](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/05688eb7-2afa-4475-a4c4-0197130a7624)
+
+![Impulse Design Panel](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/29ff2baf-d92b-4aa0-ad5d-a068143d25bb)
 
 
 
+### Step 6: *Training Model Using Impulse: Generating features*
 
-### Step 6: *Training Model using Impulse*
-  
-...
+Now, the true fun begins - training your Machine Learning model!
+
+Select the waffle menu at the top left and, below the `Impulse design` tab, select `Spectral features`.
+
+This menu will allow you to configure the selected PROCESSING block. At the top, the "Raw data" graph allows you to view the graphed data of each sample (accessed by drop-down menu at top rigth). The graph on the right, "DSP result", shows the processing results on the data. For more information about the [Spectral Features](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/spectral-features) processing block, visit the attached link. 
+
+> Set up your project as shown below, then click `Save parameters`:
+
+
+![Spectral Features Parameters](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/5746fa06-6806-410d-aec8-2375c3e54382)
+
+
+The next screen you are brought to is the ***"Feature generation"*** menu. Here, the data will be split into windows (based on the window size and increase), the spectral features block will be applied to those windows, and the *feature importance* will be calculated.
+
+> Once satisfied with all settings, click `Generate features` and wait for your computer to finish the process.
+
+After the feature generation process is completed, the `"Feature Explorer"` will populate on the screen. This graphed area displays the color-coded extracted features plotted with all generated windows. An important step here is to evaluate this data as this is what your ML model will be trained on. If you can visually identify clusters of similar features, then the ML model will likely be able to do so as well. However, if the data appears to be poorly seperated though, you might have bad data - consider adding more data or re-evaluating your data collection method.
+
+Example of bad data:
+![BAD Feature Generation Results](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/2e241f4a-5f01-49a7-8c92-8aa2c72fb925)
+
+
+Example of good data:
+![GOOD Feature Generation Results](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/cb193210-938c-42b0-9511-4404f50a1a90)
+
+
+
+### Step 7: *Training Model Using Impulse: Training with Classifer*
++ **NEURAL NETWORK**: a collection of pattern-recognizing algorithms that follow a similar process as the human brain
+
+Now that all data has been processed, it is time to start training the neural network (NN) of the ML model. The NN will take the PROCESSING data and attempt to map this data to the available classes (based on the 3 labels). To learn more about how the [Classifier](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/classification) LEARNING block works, visit the attached link.
+
+Select the waffle menu at the top left and, below the `Impulse design` tab, select `Classifier`.
+
+Here, you will be faced with options to change settings for "Number of training cycles", "Use learned optimizer", "Learning rate", and "Training processor". Seeing as every option besides the training cycle setting requires Enterprise subscriptions, those settings will be left as default. Changing the number of training cycles 
+
 
 
 
