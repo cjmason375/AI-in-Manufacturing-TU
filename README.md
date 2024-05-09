@@ -224,10 +224,24 @@ Once you have adjusted the model's parameters and received desired results from 
 
 
 
-
-
-
 ## *Deploying the Machine Learning Model*
+
+Now that you have succcessfully created, trained, and tested your Machine Learning model, it is now time to put the model to the test against real-world data collection. Throughout this section, we will be going through the necessary steps to "deploy" your model using a computer and the BrickML module.
+
+Deploying a model allows the model to run locally on a device wihtout an internet connection, with low latency, and constantly sampling data to classify with the model. To learn more about deployment and the steps involved with deploying a model, visit the [Deployment](https://docs.edgeimpulse.com/docs/run-inference/cpp-library/running-your-impulse-locally) page.
+
+For this guide, Terminal on a Macbook Pro was used. However, if you are using a Windows or Linux computer, the steps should be similar but may require extra steps. 
+
+Select the waffle menu at the top left and navigate to `Deployment`.
+
+Under "Search deployment options", you can find the multitude of options for exporting your ML model to be run locally. 
+
+> Search "BrickML" and select that deployment option.
+
+
+> (FINISH UP LATER)
+
+
 
 
 
