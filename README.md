@@ -171,13 +171,51 @@ Now that all data has been processed, it is time to start training the neural ne
 
 Select the waffle menu at the top left and, below the `Impulse design` tab, select `Classifier`.
 
-Here, you will be faced with options to change settings for "Number of training cycles", "Use learned optimizer", "Learning rate", and "Training processor". Seeing as every option besides the training cycle setting requires Enterprise subscriptions, those settings will be left as default. When changing the number of training cycles, one must consider overfitting and underfitting.
+Here, you will be faced with options to change settings for "Number of training cycles", "Use learned optimizer", "Learning rate", and "Training processor". Seeing as changing the settings for every option besides training cycles requires an Enterprise subscription, those settings will be left as default. When changing the number of training cycles, one must consider overfitting and underfitting.
 
-+ **OVERFITTING**: ...
-+ **UNDERFITTING**: ...
++ **OVERFITTING**: Models that are *overfit* display a HIGH variance and LOW bias. Therefore, the model may be too complex and specific to training data, and may fail when used on testing or real-world data. To fix overfitting, you can improve the quality of training data,reduce the number of training cycles (epochs), reduce complexity, or stop the training as soon as loss begins to increase.
++ **UNDERFITTING**: Models that are *underfit* display a HIGH bias and LOW variance. Therefore, the model may be too simple and not properly represent data complexity. To fix underfitting, you can increase the model complexity or number of features, remove noise, or increase the number of training cycles (epochs).
+
+> Set the "Number of training cycles" to 30. To see the effects of overfitting or underfitting, set the training cycles a number much higher and much lower than 30, respectively. 
+
+With all parameters set, click `Start training` to begin training with the Classifier.
+
+After the `Training output" panel finishes the job, accuracy and loss percentages will be displayed, as well as another confusion matrix. This confusion matrix, however, represents ... . Below the matrix, you can find the same graph from the Spectral Features tab, but it will now represent correctly and incorrectly labeled data.
 
 ...
 
+![Screenshot 2024-05-09 at 1 55 42 PM](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/2f30644c-4bc1-4847-83ed-3f7a8713849d)
+
+> Although the accuracy of the Classifier happens to be 100% for this model, that is not always a good thing - it may mean your model is overfit! It is important to not force your data into standardization through too many learning cycles, and having a diverse model is more important for classifying real-world data. Refer to the overfitting definition above for possible fixes.
+
+Congratulations! You have successfully created a Neural Network and have trained your model!
+
+
+
+
+### Step 8: *Testing your Model*
+
+Now that your model is fully trained, it is time to put it to the test! There are two primary methods for testing your model: `Live Classification` and `Model Testing`. For the intents of this guide, we will use the Model Testing option - however, depending on the desired final result of your model, using both methods can lead to a more operational model and expose potential issues that may arise later in real-world use.
+
+Select the waffle menu at the top left and select `Model testing`.
+
+In the `Test data` panel, you will find the set of data you earlier moved into the TEST section. The `Model tesing` process works in a similar manner as the Classifer - however, the datasets that are used are different. The `Classifier` data uses training data to teach the model. However, throughout training, the `Model testing` data has not been accessed by the model as it serves a sole purpose - to be used as verifications of how well the model performs on unseen data.
+
+> Edge Impulse automatically attaches the label of the sample as the "Expected Outcome", but review the "Expected Outcome" for each sample and ensure all labels are correct. Then, press `Classify all` to test the model against this unseen data.
+
+
+![Screenshot 2024-05-09 at 2 34 44 PM](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/d94422e0-062d-4004-9481-c96ee9adf3fc)
+
+As shown below, the `Model testing` results panel looks nearly identical to the `Classifier` panel - the key difference is the F1 score for each shape on the bottom row.
+
+If your model testing results give bad results, consider any parameters that can be changed. Below are some possible fixes to improve the ability of your model to classify unseen data:
+
++ ***Add more unique data!*** Increasing the amount of unique data that a model is trained on exposes the model to more features, which often increases the ability of the model to classify new data.
++ ***Make sure the device is being used in the manner for which the ML model was trained!*** If the device is attempting to classify data that was captured in a different manner than data was collected, the model will be confused as it was not trained for that use case. Also, consider adding unique data so the model can classify a wider variety of data.
++ ***Ensure the model has been trained enough.*** Consider increasing the number of training cycles (epochs) and obseve the performance on impact. Be careful to not overfit your model, though (can reduce learning rate or add more data to reduce overfitting).
++ ***The neural network architecture is not a great fit for your data.*** Change the number of layers and neurons and observe performance improvement.
+
+Once you have adjusted the model's parameters and received desired results from `Model testing`, you have sucessfully set up your Machine Learning model. Congratulations!
 
 
 
@@ -186,14 +224,6 @@ Here, you will be faced with options to change settings for "Number of training 
 
 
 
-
-
-
-
-
-
-
-## *Setting Up a Machine Learning Model (with Edge Impulse)*
 
 
 
