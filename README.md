@@ -29,7 +29,6 @@ The BrickML device was developed in conjuction between Edge Impulse and Reloc to
 
 For this guide, steps will be provided to create an example ML model capable of classifying 3 labeled shapes using a device's accelerometer data. With the device, you will be able to draw out the shape, and the model will be able to predict what shape it suspects is being drawn.
 
-(add more later)...
 
 
 
@@ -153,11 +152,13 @@ The next screen you are brought to is the ***"Feature generation"*** menu. Here,
 
 After the feature generation process is completed, the `"Feature Explorer"` will populate on the screen. This graphed area displays the color-coded extracted features plotted with all generated windows. An important step here is to evaluate this data as this is what your ML model will be trained on. If you can visually identify clusters of similar features, then the ML model will likely be able to do so as well. However, if the data appears to be poorly seperated though, you might have bad data - consider adding more data or re-evaluating your data collection method.
 
-Example of bad data:
+#### Example of bad data:
+
 ![BAD Feature Generation Results](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/2e241f4a-5f01-49a7-8c92-8aa2c72fb925)
 
 
-Example of good data:
+#### Example of good data:
+
 ![GOOD Feature Generation Results](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/cb193210-938c-42b0-9511-4404f50a1a90)
 
 
