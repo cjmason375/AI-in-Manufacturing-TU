@@ -3,14 +3,14 @@
 
 #### [BrickML Box Official User Manual](https://www.reloc.it/download/products/RD-BML/R22P04P1XDT00_BrickML-Box_UserManual_r11.pdf)
 
-### Details about BrickML
+## Details about BrickML
 
 > "***BrickML*** is a low-power high-performance self-contained embedded device designed to run machine learning operations at the edge in industry settings." ~ [Reloc](https://www.reloc.it/download/products/RD-BML/R22P04P1XDT00_BrickML-Box_UserManual_r11.pdf)
 
 The BrickML module is designed to be mounted directly onto equipment for environmental, sound, and motion-related Machine Learning (ML) data collection. With on-board computing, sensing, and communication capabilities, the BrickML is also resistant to rugged use (dust and moisture resistant). Direct interfacing with Edge Impulse ML software allows for more speed and less development time while also allowing users a flexible suite for custom development. 
 
 
-### Technical Specifications
+## Technical Specifications
 + *Sensors*: Microphone (Knowles SPH0641LU4H-1), IMU (Bosch BNO055 9-DOF), and temperature/humidity (T/H) sensor (Renesas HS3001 high-performance)
 + *Microcontroller unit (MCU)*: 32-bit ARM Cortex-M33 core with FPU and 200 MHz clock speed
   + Up to 2-MB program memory
@@ -23,3 +23,18 @@ The BrickML module is designed to be mounted directly onto equipment for environ
 + *Dimensions*: 89 mm x 79 mm x 33 mm
 
 ![Left Side - Sensors (Temperature and Humidity, Inertial, Microphone, and Analog to Digital Converter) / Right Side - Connectivity (Ethernet, CAN, UART, USB) / Middle - MCU and BLE](https://github.com/cjmason375/AI-in-Manufacturing-TU/assets/107148984/9e85f5ea-b1f2-4ef5-aaf2-a82c6c48329d)
+
+
+## Industrial IoT
+(*Purdue ME597, IIot Implementation for Smart Manufacturing*)
+
+### Pipeline:
+1. ***Data Collection*** : implementing IoT sensor CONNECTIVITY and COMMUNICATION on target machines following industry standard protocols
+2. ***Middleware*** : allow hardware devices (some of which are legacies) to communicate and integrate technologies (the "glue for service-oriented application") 
+3. ***Database and visualization*** : ??
+4. ***Machine Learning*** : training ML model and implementing model on an edge computer to perform real-time recognition
+    + **Data Analysis:** handling, indexing, graph plotting, signal processing, feature extraction and selection, and visualization 
+    + **ML Training:** neural network, hyperparameter optimization
+    + **Real-Time Implementation:** continous data preprocessing, autoencoder-guided data visualization, multi-classification for process monitoring
+  
+
