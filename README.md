@@ -12,6 +12,10 @@ supervised v. unsupervised learning definitions
 (put more info)
 
 
+## *What is Predictive Maintenance?*
+
+...
+
 
 ## *What is Edge Impulse and the BrickML?*
 
