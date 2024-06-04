@@ -42,3 +42,18 @@ The BrickML module is designed to be mounted directly onto equipment for environ
     + **Real-Time Implementation:** continous data preprocessing, autoencoder-guided data visualization, multi-classification for process monitoring
   
 
+## BrickML for Continuous Data Collection
+
+### [Predictive Maintenance w/ Sony Spresense and CommonSense](https://edgeimpulse.com/case-studies/predictive-maintenance-with-sony-spresense-and-commonsense)
++ Sony Spresense MCU - "powerhouse dev. board", compact, ample I/O pins and hookups for camera, mic, and speakers (designed for Sony's smart earbuds), can connect to GPS, energy efficient
+  + processing of sensor inputs and ML model predictions occur onboard
++ CommonSense sensor board (SensiEDGE) - stacks 10 additional environmental sensors onto Spresense
+  + w/ two boards coupled together, data from sensors is directly accessible for users in EdgeImpulse
+  + Air quality, Accelerometer, Magnetometer, Gyro, Temperature, Microphone, Proximity, Humidity, Pressure, Light
++ use EdgeImpulse for creating and running AI algorithms directly on edge devices
+  + web-based platform and Python SDK allow ability to gather and label data, train and optimize model, and load directly onto Edge device
+  + offers built-in algorithms (classification, object detection, anomaly detection)
+  + able to reduce development time and resources
+  + natively supported devices allow you to access the board and sensors directly in platform (to gather data, build algorithm, deploy onto board)
+
+
