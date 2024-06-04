@@ -56,4 +56,8 @@ The BrickML module is designed to be mounted directly onto equipment for environ
   + able to reduce development time and resources
   + natively supported devices allow you to access the board and sensors directly in platform (to gather data, build algorithm, deploy onto board)
 
+### [Serial Daemon](https://docs.edgeimpulse.com/docs/tools/edge-impulse-cli/cli-daemon)
+### [EI CLI](https://docs.edgeimpulse.com/docs/tools/edge-impulse-cli/cli-installation)
+### [Industry Reference Design - BrickML](https://docs.edgeimpulse.com/docs/edge-ai-hardware/production-ready/the-brickml)
+
 
