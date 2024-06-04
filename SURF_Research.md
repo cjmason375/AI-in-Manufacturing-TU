@@ -59,5 +59,7 @@ The BrickML module is designed to be mounted directly onto equipment for environ
 ### [Serial Daemon](https://docs.edgeimpulse.com/docs/tools/edge-impulse-cli/cli-daemon)
 ### [EI CLI](https://docs.edgeimpulse.com/docs/tools/edge-impulse-cli/cli-installation)
 ### [Industry Reference Design - BrickML](https://docs.edgeimpulse.com/docs/edge-ai-hardware/production-ready/the-brickml)
+### [Data Sources](https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition/data-sources)
+### [Sensor Fusion](https://docs.edgeimpulse.com/docs/tutorials/end-to-end-tutorials/sensor-fusion)
 
 
