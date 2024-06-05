@@ -61,5 +61,9 @@ The BrickML module is designed to be mounted directly onto equipment for environ
 ### [Industry Reference Design - BrickML](https://docs.edgeimpulse.com/docs/edge-ai-hardware/production-ready/the-brickml)
 ### [Data Sources](https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition/data-sources)
 ### [Sensor Fusion](https://docs.edgeimpulse.com/docs/tutorials/end-to-end-tutorials/sensor-fusion)
+### [Visualizing Complex Datasets](https://edgeimpulse.com/blog/visualizing-complex-datasets-in-edge-impulse/)
 
+
+#### [Recognizing sound from audio](https://docs.edgeimpulse.com/docs/tutorials/end-to-end-tutorials/audio-classification)
+### [Continous Sampling](https://docs.edgeimpulse.com/docs/tutorials/advanced-inferencing/continuous-audio-sampling)
 
